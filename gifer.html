@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>The Walker</title>
+  <style>
+	div img{display:none;}
+	button{border:0;background:transparent;}
+  </style>
+</head>
+<body>
+  <div id='gifs'>
+	  <img src="/pics/1.gif" id="tree1">
+	  <img src="/pics/2.gif" id="tree2">
+	  <img src="/pics/3.gif" id="tree3">
+	  <img src="/pics/4.gif" id="tree4">
+	  <img src="/pics/5.gif" id="tree5">
+	  <img src="/pics/6.gif" id="tree6">
+	  <img src="/pics/7.gif" id="tree7">
+	  <img src="/pics/8.gif" id="tree8">
+	</div>
+  <canvas id="svc" width="200" height="500">
+    YOU EITHER DON'T HAVE JAVASCRIPT ENABLED OR NEED TO UPDATE YOUR BROWSER!
+  </canvas>
+  <br />
+	  <button onclick="movef()"><img src="/pics/play.png" style="margin:-100px;"></button>
+	  <button onclick="moveb()"><img src="/pics/back.png" style="margin:-100px;"></button>
+	  <button onclick="stopIt()"><img src="/pics/pause.png" style="margin:-100px;"></button>
+  
+  <script src="gifer.js"></script>
+</body>
+</html>
