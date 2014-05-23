@@ -12,7 +12,7 @@
   moveb = function (){
     stopIt();
     moving = setInterval(function(){
-      i ==-1 || i==x ? i=(x-1) : i; //Check for both -1 and 8 because 'i' keeps it's value from 'movef' and vice-versa
+      i ==-1 || i==x ? i=(x-1) : i; //Check for both -1 and 8 because 'i' keeps it's value from 'movef' and vice-versa below
       var pika = document.getElementById(pics[i]);
       c.drawImage(pika,0,0);
       i--;
