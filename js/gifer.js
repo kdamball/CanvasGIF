@@ -1,34 +1,36 @@
 (function(){
-  var pics = ['tree1','tree2','tree3','tree4','tree5','tree6','tree7','tree8'];
-  var cvs = document.getElementById('svc');
-  var c = cvs.getContext('2d');
-  var i = 0;
-  var x = pics.length;
-  var forward, moonwalk,
+  var pics = ['tree1','tree2','tree3','tree4','tree5','tree6','tree7','tree8'],
+    cvs = document.getElementById('svc'),
+    c = cvs.getContext('2d'),
+    i = 0,
+    x = pics.length,
+    movef, moveb, stopIt, moving,
     front = document.getElementById("front"),
     back = document.getElementById("back"),
     pause = document.getElementById("pause");
-  function moveb(){
+    
+  moveb = function (){
     stopIt();
-    moonwalk = setInterval(function(){
-      i ==-1?i=(x-1):i;
+    moving = setInterval(function(){
+      i ==-1 || i==x ? i=(x-1) : i; //Check for both -1 and 8 because 'i' keeps it's value from 'movef' and vice-versa
       var pika = document.getElementById(pics[i]);
       c.drawImage(pika,0,0);
       i--;
     },1000/8);
   }
-  function movef(){
+  
+  movef = function(){
     stopIt();
-    forward = setInterval(function(){
-    i ==x?i=0:i;
+    moving = setInterval(function(){
+      i==x || i==-1 ? i=0 : i;
       var pika = document.getElementById(pics[i]);
       c.drawImage(pika,0,0);
       i++;
     },1000/8);
   }
-  function stopIt(){
-      clearInterval(forward);
-      clearInterval(moonwalk);
+  
+  stopIt = function(){
+      clearInterval(moving);
   };
   
   front.addEventListener("click", movef, false);
