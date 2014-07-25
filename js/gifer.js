@@ -3,7 +3,7 @@
     cvs = document.getElementById('svc'),
     c = cvs.getContext('2d'),
     i = 0,
-    x = pics.length,
+    len = pics.length,
     movef, moveb, stopIt, moving,
     front = document.getElementById("front"),
     back = document.getElementById("back"),
@@ -12,7 +12,7 @@
   moveb = function (){
     stopIt();
     moving = setInterval(function(){
-      i ==-1 || i==x ? i=(x-1) : i; //Check for both -1 and 8 because 'i' keeps it's value from 'movef' and vice-versa below
+      i ==-1 || i==len ? i=(len-1) : i; //Check for both -1 and 8 because 'i' keeps it's value from 'movef' and vice-versa below
       var pika = document.getElementById(pics[i]);
       c.drawImage(pika,0,0);
       i--;
@@ -22,7 +22,7 @@
   movef = function(){
     stopIt();
     moving = setInterval(function(){
-      i==x || i==-1 ? i=0 : i;
+      i==len || i==-1 ? i=0 : i;
       var pika = document.getElementById(pics[i]);
       c.drawImage(pika,0,0);
       i++;
